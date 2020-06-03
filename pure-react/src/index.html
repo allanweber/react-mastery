@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">React not render</div>
+    <script src="https://unpkg.com/react@16.8.6/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.development.js"></script>
+    <script>
+
+        const Person = (props) => {
+            return React.createElement("div", {}, [
+                React.createElement("h1", {}, props.name),
+                React.createElement("p", {}, props.role),
+            ])
+        }
+
+        class App extends React.Component {
+            render() {
+                return React.createElement("div", {},
+                    [
+                        React.createElement("h1", {}, "REACT IS RENDER"),
+                        React.createElement(Person, { name: 'Allan', role: 'Developer' }),
+                        React.createElement(Person, { name: 'Taise', role: 'Front end' }),
+                        React.createElement(Person, { name: 'Dog', role: 'pet' })
+                    ]
+                )
+            }
+        }
+        // const App = () => {
+        //     return React.createElement("div", {},
+        //         [
+        //             React.createElement("h1", {}, "REACT IS RENDER"),
+        //             React.createElement(Person, { name: 'Allan', role: 'Developer' }),
+        //             React.createElement(Person, { name: 'Taise', role: 'Front end' }),
+        //             React.createElement(Person, { name: 'Dog', role: 'pet' })
+        //         ]
+        //     )
+        // }
+
+        ReactDOM.render(React.createElement(App), document.getElementById("root"))
+    </script>
+</body>
+
+</html>
