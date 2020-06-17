@@ -1,6 +1,6 @@
-## Use-state-example
+## useReducer example
 
-A small application to help us understand the new useState hook
+A small project to help us understand the useReducer hook. We are replacing the code in our useEffect example with useReducer for state management.
 
 # How to fork and clone
 
